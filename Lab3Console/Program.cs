@@ -59,32 +59,32 @@ namespace Lab3Console
                 string filename;
                 string fullPath;
 
-                if (path.Substring(path.Length -3).Equals('.'))
-                {
-                    filename = path.Substring(path.LastIndexOf('\\') + 1, path.LastIndexOf('.'));
-                }
-                else
-                {
-                    filename = path.Substring(path.LastIndexOf('\\') + 1);
-                    filename += ".*";
-
-                    path = path.Substring(0, path.LastIndexOf('\\') + 1);
-                }
-
                 try
                 {
+                    if (path.Substring(path.Length - 3).Equals('.'))
+                    {
+                        filename = path.Substring(path.LastIndexOf('\\') + 1, path.LastIndexOf('.'));
+                    }
+                    else
+                    {
+                        filename = path.Substring(path.LastIndexOf('\\') + 1);
+                        filename += ".*";
+
+                        path = path.Substring(0, path.LastIndexOf('\\') + 1);
+                    }
+
                     fullPath = System.IO.Directory.GetFiles(path, filename).First();
 
                     return fullPath;
+
                 }
-                catch(InvalidOperationException)
+                catch (InvalidOperationException)
                 {
                     Console.WriteLine("File not found!!!");
                 }
-                catch(ArgumentException)
+                catch (ArgumentException)
                 {
                     Console.WriteLine("Invalid path!!!!");
-                    
                 }
 
                 return string.Empty;
