@@ -14,7 +14,7 @@ namespace Lab3Console
     {
         static void Main(string[] args)
         {
-            //Test path C:\Users\glimm\source\repos\Lab3MetaData\test2
+
             string path;
             string pathFull;
             byte[] fileInByte;
