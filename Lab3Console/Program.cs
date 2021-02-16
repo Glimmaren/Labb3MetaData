@@ -119,7 +119,7 @@ namespace Lab3Console
                     }
                     else
                     {
-                        Console.WriteLine("This file is not valid");
+                        Console.WriteLine("This file is not a bmp or a png file!");
                     }
                 }
 
